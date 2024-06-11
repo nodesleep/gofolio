@@ -1,0 +1,71 @@
+{{ block "index" .}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://unpkg.com/htmx.org/dist/htmx.min.js"></script>
+		<link rel="stylesheet" href="/static/styles.css" />
+		<title>TwoSlashes</title>
+	</head>
+	<body>
+		<div class="container">
+			{{ template "headline" .}} {{ template "navbar" .}}
+			<div id="content">{{ template "greeting" . }}</div>
+		</div>
+	</body>
+</html>
+{{ end }}
+
+<!-- Headline -->
+{{ block "headline" .}}
+<div>
+	<h1 class="headline">twoslashes</h1>
+</div>
+{{ end }}
+
+<!-- Navigation -->
+{{ block "navbar" . }}
+<nav class="navbar">
+	<ul>
+		<li>
+			<a hx-target="#content" hx-post="/greeting"> home </a>
+		</li>
+		<li>
+			<a hx-target="#content" hx-post="/about"> about </a>
+		</li>
+		<li>
+			<a hx-target="#content" hx-post="/htmx"> htmx keygen </a>
+		</li>
+	</ul>
+</nav>
+{{ end}}
+
+<!-- Index Content -->
+{{ block "greeting" .}}
+<div>
+	<img src="/static/featured-06-11-24.webp" class="htmx-img" />
+	<h1>twoslashes signifies a comment.</h1>
+	<p>
+		And since Nick Tabick beat me to the dot com and won't let it go despite
+		being dormant for years, I've gotta settle for dot dev. Anyways, I'm a
+		software engineer. I've used titles like "FullStack" and "Web Dev", but
+		that's very limiting and I'm much more capable than that lowly shit.
+	</p>
+	<p>
+		I can write web applications in Vue, React, Next.js, and Vanilla
+		Javascript (using TypeScript, ofc) if fed properly. That's weaksauce,
+		though.
+	</p>
+	<p>
+		I believe the future of development will shift into a Go/HTMX stack. If
+		it doesn't, I'll be extremely pissed off as I've spent a lot of time
+		learning Go and HTMX. Easy as you think they might be, remember I am a
+		Javascript developer.
+	</p>
+	<p>
+		Yes, I cracked HTMX 2.0. You can find keys here on the site. Now leave
+		me alone.
+	</p>
+</div>
+{{ end }}
