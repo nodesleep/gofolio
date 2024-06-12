@@ -19,6 +19,10 @@ type Product struct {
 	Key string
 }
 
+type Image struct {
+	Url string
+}
+
 type KeyConfig struct {
 	KeyLength  int
 	GroupCount int
@@ -71,13 +75,14 @@ func main() {
 	e.Use(middleware.Logger())
 	
 	htmx := Product{Key: "0"}
+	imageUrl := Image{Url: "/static/featured-06-11-24-1.webp"}
 
 	e.Renderer = newTemplate()
 	
 	e.Static("/static", "static")
 	
 	e.GET("/", func(c echo.Context) error {
-		return c.Render(200, "index", nil)
+		return c.Render(200, "index", imageUrl)
 	})
 
 	e.POST("/about", func(c echo.Context) error {
@@ -85,7 +90,7 @@ func main() {
 	})
 	
 	e.POST("/greeting", func(c echo.Context) error {
-		return c.Render(200, "greeting", nil)
+		return c.Render(200, "greeting", imageUrl)
 	})
 
 	e.POST("/htmx", func(c echo.Context) error {

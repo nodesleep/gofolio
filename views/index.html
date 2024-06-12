@@ -37,6 +37,14 @@
 		<li>
 			<a hx-target="#content" hx-post="/htmx"> htmx keygen </a>
 		</li>
+		<li>
+			<a href="https://twitter.com/asyncawaited" target="_blank">
+				twitter
+			</a>
+		</li>
+		<li>
+			<a href="https://github.com/nodesleep" target="_blank"> github </a>
+		</li>
 	</ul>
 </nav>
 {{ end}}
@@ -44,13 +52,13 @@
 <!-- Index Content -->
 {{ block "greeting" .}}
 <div>
-	<img src="/static/featured-06-11-24.webp" class="htmx-img" />
+	<img src="{{.Url}}" class="htmx-img" />
 	<h1>twoslashes signifies a comment.</h1>
 	<p>
 		And since Nick Tabick beat me to the dot com and won't let it go despite
 		being dormant for years, I've gotta settle for dot dev. Anyways, I'm a
 		software engineer. I've used titles like "FullStack" and "Web Dev", but
-		that's very limiting and I'm much more capable than that lowly shit.
+		that's very limiting and I'm much more capable than that.
 	</p>
 	<p>
 		I can write web applications in Vue, React, Next.js, and Vanilla
@@ -60,12 +68,8 @@
 	<p>
 		I believe the future of development will shift into a Go/HTMX stack. If
 		it doesn't, I'll be extremely pissed off as I've spent a lot of time
-		learning Go and HTMX. Easy as you think they might be, remember I am a
-		Javascript developer.
-	</p>
-	<p>
-		Yes, I cracked HTMX 2.0. You can find keys here on the site. Now leave
-		me alone.
+		learning Go and HTMX. Easy as you think they might be, you must remember
+		I am a Javascript developer.
 	</p>
 </div>
 {{ end }}
